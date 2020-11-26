@@ -23,7 +23,7 @@ services:
     links:
       - db
     volumes:
-      - .:/app
+      - .:/app:delegated
       - bundle:/usr/local/bundle
     ports:
       - 3000:3000

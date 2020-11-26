@@ -80,3 +80,4 @@ This will showcase my experience in:
 3. Run `rails new survey-app --api` to initialize API. (10min)
 4. Setup backend and db with docker-composer (10min)
 5. Write some API endpoints (10min)
+6. Add some migration for survey & API test code for GET survery api (40min)
