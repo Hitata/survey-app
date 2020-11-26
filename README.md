@@ -57,7 +57,18 @@ This will showcase my experience in:
     + question_id: foreign_key -> questions
     + answer_id: foreign_key -> question_options
 
+## API Endpoints
+- `GET /publishers/surveys`
+- `POST /publishers/surveys`
+- `PATCH /publishers/surveys/:id`
+- `DELETE /publishers/surveys/:id`
+- `POST /publishers/surveys/:id/questions`
+- `PATCH /publishers/surveys/:id/questions/:qid`
+- `DELETE /publishers/surveys/:id/questions/:qid`
+
 ## Steps
 1. Write User stories to understand the requirements and limit scope of development (15min)
 2. Write Database schema to satisfy the current scope and not over think relations (20min)
-3. Setup backend and db with docker-composer
+3. Run `rails new survey-app --api` to initialize API. (10min)
+4. Write some API endpoints
+3. Setup backend and db with docker-composer (10min)
