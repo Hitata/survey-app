@@ -1,0 +1,29 @@
+AllCops:
+  NewCops: disable
+  Include:
+    - 'Rakefile'
+    - 'config.ru'
+    - 'lib/**/*.rake'
+  Exclude:
+    - bin/*
+    - vendor/**/*
+    - 'db/schema.rb'
+    - 'client/**/*'
+    - '**/Gemfile'
+
+Metrics/AbcSize:
+  Max: 100
+Metrics/BlockLength:
+  Max: 350
+Layout/LineLength:
+  Max: 200
+Metrics/MethodLength:
+  Max: 50
+Style/Documentation:
+  Enabled: false
+Style/OptionalArguments:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Max: 30
+Metrics/CyclomaticComplexity:
+  Max: 30
