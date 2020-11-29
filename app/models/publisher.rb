@@ -7,4 +7,8 @@ class Publisher < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
+
+  has_many :surveys, dependent: :destroy
+
+  validates :name, :email, presence: true
 end

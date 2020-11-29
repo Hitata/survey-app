@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_154714) do
+ActiveRecord::Schema.define(version: 2020_11_29_154613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,25 @@ ActiveRecord::Schema.define(version: 2020_11_28_154714) do
     t.index ["uid", "provider"], name: "index_publishers_on_uid_and_provider", unique: true
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.string "title"
+    t.string "options", array: true
+    t.bigint "survey_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["options"], name: "index_questions_on_options", using: :gin
+    t.index ["survey_id"], name: "index_questions_on_survey_id"
+  end
+
   create_table "surveys", force: :cascade do |t|
     t.string "title"
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "publisher_id"
+    t.index ["publisher_id"], name: "index_surveys_on_publisher_id"
   end
 
+  add_foreign_key "questions", "surveys"
+  add_foreign_key "surveys", "publishers"
 end

@@ -38,15 +38,13 @@ This will showcase my experience in:
     + using devise, devise_token_auth generated schema
 - surveys
     + id: auto_increment
+    + publisher_id: foreign_key -> publisher
     + title: string
     + active: boolean
 - questions
     + id: auto_increment
-    + survey_id: foreign_key -> surveys
-    + title: string
-- question_options
-    + id: auto_increment
-    + question_id: foreign_key -> questions
+    + survey_id: foreign_key -> survey
+    + options: string, array: true
     + title: string
 - survey_results
     + survey_id: foreign_key -> surveys
@@ -82,3 +80,5 @@ This will showcase my experience in:
 5. Write some API endpoints (10min)
 6. Add some migration for survey & API test code for GET survery api (40min)
 7. Add authentication for publishers using `devise_token_auth`
+8. Add rubocop
+9. Create table question & rspec model testcases
