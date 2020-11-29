@@ -3,11 +3,12 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :surveys, only: %i[index show]
       namespace :publishers do
-        resources :surveys, only: %i[index show create update delete] do 
-          resources :questions, only: %i[show create update delete]
+        resources :surveys, only: %i[index show create update destroy] do 
+          resources :questions, only: %i[index show create update destroy]
         end
-        mount_devise_token_auth_for 'Publisher', at: 'auth'
       end
     end
   end
+
+  mount_devise_token_auth_for 'Publisher', at: 'api/v1/publishers/auth'
 end

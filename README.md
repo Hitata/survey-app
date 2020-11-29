@@ -82,3 +82,4 @@ This will showcase my experience in:
 7. Add authentication for publishers using `devise_token_auth`
 8. Add rubocop
 9. Create table question & rspec model testcases
+10. Remove rspec request and add db:seed (Writing test took too much time T__T)

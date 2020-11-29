@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_154613) do
 
   create_table "surveys", force: :cascade do |t|
     t.string "title"
-    t.boolean "active"
+    t.boolean "active", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "publisher_id"

@@ -12,6 +12,6 @@ class ApplicationController < ActionController::API
 
   def error_message(message, status = :unprocessable_entity)
     error = {message: message, status: Rack::Utils::SYMBOL_TO_STATUS_CODE[status]}
-    render json: {error: error}, status: status
+    error_json_response(error, status)
   end
 end

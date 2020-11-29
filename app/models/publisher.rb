@@ -9,6 +9,7 @@ class Publisher < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :surveys, dependent: :destroy
+  has_many :questions, through: :surveys
 
-  validates :name, :email, presence: true
+  validates :email, presence: true
 end
