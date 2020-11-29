@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  include Response
   rescue_from ActiveRecord::RecordNotFound do |e|
     error_message(e.message, :not_found)
   end

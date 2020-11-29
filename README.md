@@ -81,3 +81,4 @@ This will showcase my experience in:
 4. Setup backend and db with docker-composer (10min)
 5. Write some API endpoints (10min)
 6. Add some migration for survey & API test code for GET survery api (40min)
+7. Add authentication for publishers using `devise_token_auth`

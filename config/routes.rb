@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, defaults: {format: :json} do
-    resources :surveys
+    namespace :v1 do
+      resources :surveys
+      namespace :publishers do
+        resources :surveys
+        mount_devise_token_auth_for 'Publisher', at: 'auth'
+      end
+    end
+
   end
+
 end
