@@ -8,7 +8,19 @@ module Api::V1
 
     def show
       @survey = Survey.active.find(params[:id])
-      json_response(@survey)
+    end
+
+    def answer
+    end
+
+    private
+
+    def create_params
+      params
+        .permit(
+          :title,
+          :options
+        )
     end
   end
 end
