@@ -1,4 +1,7 @@
 # Survey app for a Technical Assignment
+## Submission
+Thanks for taking the time to review this technical assignment. I'd like to inform reviewers that **I have only finish the Rails API** and **had not finish Vue frontend** due to deadline.
+
 ## Abstract
 This survey app is a simple implementation of the Technical Assignment given as a first round for a job interview. Its for a full-stack developer position.
 
@@ -9,6 +12,34 @@ This will showcase my experience in:
 - plan out step by step what I will do.
 - the proficiency of tools (docker, vuejs, rails)
 - showing my work by git commits
+
+## Setup
+1. Runing backend (Rails API & Postgre)
+```
+docker-composer up -d
+```
+API is at `localhost:3000`
+
+2. Runing frontend
+```
+yarn install
+yarn serve
+```
+frontend is at `localhost:8080`
+
+## TODO
+- [x] Publisher authentication
+- [x] all Rails API endpoint
+- [ ] using new Vue 3 with composable api
+- [ ] Vue app authentication for publisher 
+- [ ] rspec request tests
+- [ ] Setting up Vue to run in docker-composer
+
+## Dificulties
+- Limited time (10-15 hours spend only)
+- Not having a smooth development with alot of configuration needed
+- Try to use Vue 3 (with composition API)
+- Not used to tailwindcss yet (seems quick easy if know)    
 
 ## User stories
 ### Actor: Survey Publisher (SP)
@@ -83,4 +114,5 @@ This will showcase my experience in:
 9. Create table question & rspec model testcases
 10. Remove rspec request and add db:seed (Writing test took too much time T__T)
 11. Continue add api like `API Endpoints`
-11. Continue add api so user can take survey
+11. Finish all api endpoint needed
+12. create new vue with tailwind `vue create survey-app`
