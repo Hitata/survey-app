@@ -4,6 +4,10 @@ class ApplicationController < ActionController::API
     error_message(e.message, :not_found)
   end
 
+  rescue_from ActiveRecord::InvalidForeignKey do |e|
+    error_message(e.message, :not_found)
+  end
+
   rescue_from(ActionController::ParameterMissing) do |e|
     error_message(e.message, :bad_request)
   end

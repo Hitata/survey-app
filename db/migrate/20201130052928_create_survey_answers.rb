@@ -4,6 +4,8 @@ class CreateSurveyAnswers < ActiveRecord::Migration[5.2]
       t.references :survey_result, foreign_key: true
       t.references :question, foreign_key: true
       t.string :answer
+
+      t.timestamps
     end
   end
 end

@@ -1,4 +1,4 @@
-class Survey < ApplicationRecord
+class SurveyResult < ApplicationRecord
   has_many :survey_answers, dependent: :destroy
   belongs_to :survey
 

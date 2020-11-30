@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_29_154613) do
+ActiveRecord::Schema.define(version: 2020_11_30_052928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,25 @@ ActiveRecord::Schema.define(version: 2020_11_29_154613) do
     t.index ["survey_id"], name: "index_questions_on_survey_id"
   end
 
+  create_table "survey_answers", force: :cascade do |t|
+    t.bigint "survey_result_id"
+    t.bigint "question_id"
+    t.string "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_survey_answers_on_question_id"
+    t.index ["survey_result_id"], name: "index_survey_answers_on_survey_result_id"
+  end
+
+  create_table "survey_results", force: :cascade do |t|
+    t.string "email", null: false
+    t.bigint "survey_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_survey_results_on_email"
+    t.index ["survey_id"], name: "index_survey_results_on_survey_id"
+  end
+
   create_table "surveys", force: :cascade do |t|
     t.string "title"
     t.boolean "active", default: false, null: false
@@ -58,5 +77,8 @@ ActiveRecord::Schema.define(version: 2020_11_29_154613) do
   end
 
   add_foreign_key "questions", "surveys"
+  add_foreign_key "survey_answers", "questions"
+  add_foreign_key "survey_answers", "survey_results"
+  add_foreign_key "survey_results", "surveys"
   add_foreign_key "surveys", "publishers"
 end

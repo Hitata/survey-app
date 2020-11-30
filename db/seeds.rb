@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-publisher = Publisher.create(name: 'Trung', email: 'trung@example.com', password: '12345678')
-survey = Survey.create(publisher: publisher, title: 'Traveling', active: true)
-Question.create([
+publisher = Publisher.first_or_create(name: 'Trung', email: 'trung@example.com', password: '12345678')
+survey = Survey.first_or_create(publisher: publisher, title: 'Traveling', active: true)
+Question.first_or_create([
   {
     survey: survey,
     title: 'Where is your favorite city?',

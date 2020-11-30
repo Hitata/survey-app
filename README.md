@@ -49,11 +49,10 @@ This will showcase my experience in:
 - survey_results
     + survey_id: foreign_key -> surveys
     + email: string
-    + full_name: string
 - survey_answers
     + survey_result_id: foreign_key -> survey_results
     + question_id: foreign_key -> questions
-    + answer_id: foreign_key -> question_options
+    + answer
 
 ## API Endpoints
 ### Publisher
@@ -83,3 +82,4 @@ This will showcase my experience in:
 8. Add rubocop
 9. Create table question & rspec model testcases
 10. Remove rspec request and add db:seed (Writing test took too much time T__T)
+11. Continue add api like `API Endpoints`
