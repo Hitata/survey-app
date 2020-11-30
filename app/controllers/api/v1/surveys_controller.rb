@@ -3,7 +3,6 @@ module Api::V1
 
     def index
       @surveys = Survey.active.order(created_at: :desc)
-      json_response(@surveys)
     end
 
     def show
