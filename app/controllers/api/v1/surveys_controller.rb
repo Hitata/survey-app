@@ -11,15 +11,20 @@ module Api::V1
     end
 
     def answer
+      @result = SurveyResult.create(email: answer_params[:email])
+      result.answers.create(answer_params[:answers])
     end
 
     private
 
-    def create_params
+    def answer_params
       params
+        .require(:email)
         .permit(
-          :title,
-          :options
+          answers: [
+            :question_id,
+            :answer
+          ]
         )
     end
   end
