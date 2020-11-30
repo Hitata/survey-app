@@ -28,5 +28,9 @@ module Api::V1
           ]
         )
     end
+
+    def results_params
+      params.require(:email)
+    end
   end
 end

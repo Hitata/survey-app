@@ -67,8 +67,8 @@ This will showcase my experience in:
 ### User
 - `GET /surveys`
 - `GET /surveys/:id`
-- `POST /surveys/:id/answer` (need to think about request body)
-- `GET /survey-results/search/:email`
+- `POST /surveys/:id/answer`
+- `GET /survey-results?email='example@example.com'`
 - `GET /survey-results/:id`
 
 ## Steps
@@ -83,3 +83,4 @@ This will showcase my experience in:
 9. Create table question & rspec model testcases
 10. Remove rspec request and add db:seed (Writing test took too much time T__T)
 11. Continue add api like `API Endpoints`
+11. Continue add api so user can take survey
